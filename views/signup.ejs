@@ -1,0 +1,87 @@
+<%- include('layouts/header') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto mt-4">
+      <div class="card shadow my-5">
+        <div class="card-header bg-primary">
+          <h3 class="text-light">Register an account</h3>
+        </div>
+        <div class="card-body p-4">
+          <form
+            action="/signup"
+            class=".needs-validation"
+            method="post"
+            id="ad-form"
+            enctype="application/x-www-form-urlencoded">
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Fist Name:</label>
+              <input
+                type="fname"
+                class="form-control"
+                id="fname"
+                placeholder="Enter firstname"
+                name="fname"
+                required />
+            </div>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">First Name is required</div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Last Name:</label>
+              <input
+                type="lname"
+                class="form-control"
+                id="lname"
+                placeholder="Enter lastname"
+                name="lname"
+                required />
+            </div>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Last Name is required</div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+                name="email"
+                required />
+            </div>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Email is required</div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter password"
+                name="password"
+                required />
+            </div>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Password is required</div>
+
+            <div class="mb-3 d-grid">
+              <input
+                type="submit"
+                name="submit"
+                value="Sign Up"
+                class="btn btn-primary btn-lg" />
+            </div>
+          </form>
+          <p class="mt-4 text-primary">
+            Already have an account?
+            <a href="/signin">Sign In Here</a>
+          </p>
+          <p class="mt-4 text-primary">
+            <a href="/">Back to Home</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('layouts/footer') %>

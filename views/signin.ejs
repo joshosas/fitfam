@@ -1,0 +1,63 @@
+<%- include('layouts/header') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto mt-4">
+      <div class="card shadow my-5">
+        <div class="card-header bg-primary">
+          <h3 class="text-light">Login in to your account</h3>
+        </div>
+        <div class="card-body p-4">
+          <form
+            action="/signin"
+            class=".needs-validation"
+            method="post"
+            id="ad-form"
+            enctype="application/x-www-form-urlencoded">
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+                name="email"
+                required />
+            </div>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Email is required</div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter password"
+                name="password"
+                required />
+            </div>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Password is required</div>
+
+            <div class="mb-3 d-grid">
+              <input
+                type="submit"
+                name="submit"
+                value="Sign In"
+                class="btn btn-primary btn-lg" />
+            </div>
+          </form>
+          <p class="mt-4 text-primary">
+            Don't have an account?
+            <a href="/signup">Sign Up Here for Free</a>
+          </p>
+          <p class="mt-4 text-primary">
+            <a href="/">Back to Home</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('layouts/footer') %>
