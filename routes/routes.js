@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/users");
+// const User = require("../models/user_info");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 
@@ -25,6 +26,19 @@ router.post("/signup", (req, res) => {
     lname: req.body.lname,
     email: req.body.email,
     password: req.body.password,
+    // OTHERS
+    // MORNING
+    am4_6: req.body.am4_6 || "Eat, Code, Sleep",
+    am6_9: req.body.am6_9 || "Eat, Code, Sleep",
+    am9_12pm: req.body.am9_12pm || "Eat, Code, Sleep",
+    // AFTERNOON
+    pm12_3: req.body.pm12_3 || "Eat, Code, Sleep",
+    pm3_6: req.body.pm3_6 || "Eat, Code, Sleep",
+    pm6_9: req.body.pm6_9 || "Eat, Code, Sleep",
+    // NIGHT
+    pm9_12am: req.body.pm9_12am || "Eat, Code, Sleep",
+    am12_2: req.body.am12_2 || "Eat, Code, Sleep",
+    am2_4: req.body.am2_4 || "Eat, Code, Sleep",
   });
   user
     .save()
@@ -38,6 +52,7 @@ router.post("/signup", (req, res) => {
     .catch((err) => {
       res.json({ message: err.message, type: "danger" });
       console.log(err);
+      res.redirect("/signup");
     });
 });
 
@@ -53,7 +68,7 @@ router.post("/signin", async (req, res) => {
     console.log(userExist);
 
     if (userExist.password === req.body.password) {
-      res.render("dashboard", { title: userExist.fname });
+      res.render("dashboard", { title: userExist.fname, userInfo: userExist });
     }
   } catch {
     res.redirect("/signin");
