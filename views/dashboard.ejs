@@ -85,19 +85,19 @@
         <main class="col-md-9 my-5 py-5 ms-sm-auto col-lg-10 px-md-4">
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2 text-success text-center">Welcome <%= userInfo.fname %></h1>
+            <h1 class="h2 text-success text-center">Welcome <%= userInfo.fname %> <%= userInfo.lname %></h1>
             <div class="btn-toolbar mb-2 mb-md-0">
-              <a
+              <!-- <a
                 type="button"
                 href="/"
                 class="btn btn-lg btn-success px-3 me-1 d-flex align-items-center gap-1">
                 Home
-              </a>
+              </a> -->
               <a
                 type="button"
-                href="/blog"
+                href="/edit_todos/<%= userInfo._id %>"
                 class="btn btn-lg btn-success px-3 me-1 d-flex align-items-center gap-1">
-                Blog
+                Edit
               </a>
               <!-- <form action="/edit" method="post">
                 <input type="email" class="py-1 mt-3" placeholder="Enter email" name="email" id="email" required>
