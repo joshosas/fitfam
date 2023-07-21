@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= locals.title %></title>
+  <meta name="description" content="<%= locals.description %>">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- <script type="text/javascript" defer src="/js/script.js"></script> -->
+</head>
+<body>
+
+<div class="position-fixed">
+<%- include('../partials/header_admin.ejs')  %>
+
+</div>
+  <div class="container_admin ">
+    
+    <main class="main ">
+      <%- body %>
+    </main>
+  
+  </div>  
+  
+  <footer class="p-5 bg-dark text-white text-center position-fixed fixed-bottom w-100">
+    <div class="container">
+      <p class="lead">
+        Copyright &copy; <%= new Date().getFullYear(); %> FitFam
+      </p>
+
+      <a href="#" class="position-absolute bottom-0 end-0 p-5">
+        <i class="bi bi-arrow-up-circle h1"></i>
+      </a>
+    </div>
+  </footer>
+
+
+</body>
+</html>
