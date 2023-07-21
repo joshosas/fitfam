@@ -1,7 +1,47 @@
 <%- include('layouts/header') %>
 
+
+  <!-- Banner -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container_r">
+      <h1 class="display-4">Code Stronger, Train Smarter</h1>
+      <p class="lead">" How <span class="text-warning"> ALX </span> Students Can Stay Fit with Our Fitfam Web App!".</p>
+          </div>
+         <div class="container">            
+          <img src="/img/gym_02.jpg" alt="A picture of the gym" class="gym-image" width="981" height="528">
+          
+          <section class="articles">
+            <h2 class="articles__heading">Latest Posts</h2>
+          
+            <ul class="article-ul">
+             
+
+             <% data.forEach(post => { %>
+                          
+                <li>
+                  <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                  </a>
+                </li>
+
+               <% }) %> 
+           
+            </ul>
+
+            <% if (nextPage !==null) { %>
+             
+            <a href="/blog?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+           <% } %>
+                      
+          </section>
+
+           </div> 
+        </div> 
+  </div>
+  
 <!-- POST 1 -->
-<div class="container mt-5 pt-5">
+<div class="container mt-5 pt-5 d-flex align-items-center justify-content-center">
   <div class="row">
     <div class="col-lg-10">
       <h2>7 Ways to Be a Healthy Web Programmer</h2>
@@ -369,7 +409,7 @@
 </div>
 
 <!-- POST 2 -->
-<div class="container py-5">
+<div class="container py-5 d-flex align-items-center justify-content-center">
   <div class="row">
     <div class="col-lg-10">
       <h2>Top Issues in Programmer Productivity</h2>
@@ -454,5 +494,7 @@
     </div>
   </div>
 </div>
-
 <%- include('layouts/footer') %>
+
+
+
