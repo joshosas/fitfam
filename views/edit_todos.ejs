@@ -1,18 +1,17 @@
 <%- include('layouts/header') %>
 
 <div class="container">
+  
   <div class="row my-5">
     <div class="col-lg-6 mx-auto mt-4">
       <div class="card shadow my-5">
         <div class="card-header bg-success">
-          <h3 class="text-light">Update my Todo list</h3>
-        </div>
+          <a href="/dashboard/<%= userInfo._id %>" class="text-light">&larr; Back</a>
+          <h3 class="text-light"> Update my Todo list </h3>
+                  </div>
         <div class="card-body p-4">
           <form
-            action="/edit_todos"
-            method="post"
-            id="ad-form"
-            enctype="application/x-www-form-urlencoded">
+            action="/edit_todos/<%= userInfo._id %>?_method=PUT" method="POST">
             <div class="d-none mb-3 mt-3">
               <label for="email" class="form-label">Fist Name:</label>
               <input
@@ -21,7 +20,7 @@
                 id="fname"
                 placeholder="Enter firstname"
                 name="fname"
-                value="<%= userInfo.fname%>"
+                value="<%= userInfo.fname %>"
                 required />
             </div>
             <div class="valid-feedback">Valid.</div>
@@ -42,7 +41,7 @@
             <div class="d-none mb-3 mt-3">
               <label for="email" class="form-label">Email:</label>
               <input
-                type="email"
+                type="email" 
                 class="form-control"
                 id="email"
                 placeholder="Enter email"
@@ -80,27 +79,33 @@
               <input
                 type="text"
                 class="form-control"
-                id="am4_6"
+                
                 placeholder="Enter your task(s) for 4AM to 6AM"
-                name="am4_6" />
+                name="am4_6" 
+                value="<%= userInfo.am4_6 %>"
+                />
             </div>
             <div class="mb-3 mt-3">
               <label for="email" class="form-label">6AM - 9AM:</label>
               <input
                 type="text"
                 class="form-control"
-                id="am6_9"
+                
                 placeholder="Enter your task(s) for 6AM to 9AM"
-                name="am6_9" />
+                name="am6_9" 
+                value="<%= userInfo.am6_9 %>"
+                />
             </div>
             <div class="mb-3 mt-3">
               <label for="email" class="form-label">9AM - 12PM</label>
               <input
                 type="text"
                 class="form-control"
-                id="am9_12pm"
+                
                 placeholder="Enter your task(s) for 9AM to 12PM"
-                name="am9_12pm" />
+                name="am9_12pm" 
+                value="<%= userInfo.am9_12pm %>"
+                />
             </div>
 
             <!-- AFTERNOON TODOS -->
@@ -110,27 +115,33 @@
               <input
                 type="text"
                 class="form-control"
-                id="pm12_3pm"
+                
                 placeholder="Enter your task(s) for 12M to 3PM"
-                name="pm12_3pm" />
+                name="pm12_3" 
+                value="<%= userInfo.pm12_3 %>"
+                />
             </div>
             <div class="mb-3 mt-3">
               <label for="email" class="form-label">3PM - 6PM:</label>
               <input
                 type="text"
                 class="form-control"
-                id="pm3_6pm"
+                
                 placeholder="Enter your task(s) for 3PM to 6PM"
-                name="pm3_6pm" />
+                name="pm3_6" 
+                value="<%= userInfo.pm3_6 %>"
+                />
             </div>
             <div class="mb-3 mt-3">
               <label for="email" class="form-label">6PM - 9PM</label>
               <input
                 type="text"
                 class="form-control"
-                id="6pm_9pm"
+                
                 placeholder="Enter your task(s) for 6PM to 9PM"
-                name="6pm_9pm" />
+                name="pm6_9" 
+                value="<%= userInfo.pm6_9 %>"
+                />
             </div>
 
             <!-- NIGHT TODOS -->
@@ -140,34 +151,40 @@
               <input
                 type="text"
                 class="form-control"
-                id="pm9_12pm"
+                
                 placeholder="Enter your task(s) for 9PM to 12AM"
-                name="pm9_12pm" />
+                name="pm9_12am" 
+                value="<%= userInfo.pm9_12am %>"
+                />
             </div>
             <div class="mb-3 mt-3">
               <label for="email" class="form-label">12AM - 2AM:</label>
               <input
                 type="text"
                 class="form-control"
-                id="am12_2"
+               
                 placeholder="Enter your task(s) for 12AM to 2AM"
-                name="am12_2" />
+                name="am12_2" 
+                value="<%= userInfo.am12_2 %>"
+                />
             </div>
             <div class="mb-3 mt-3">
               <label for="email" class="form-label">2AM - 4PM</label>
               <input
                 type="text"
                 class="form-control"
-                id="am2_4"
+                
                 placeholder="Enter your task(s) for 2AM to 4PM"
-                name="am2_4" />
+                name="am2_4" 
+                value="<%= userInfo.am2_4 %>"
+                />
             </div>
 
             <div class="mb-3 d-grid">
               <input
                 type="submit"
                 name="submit"
-                value="Set my Todo List"
+                value="Update my Todo List"
                 class="btn btn-success btn-lg" />
             </div>
           </form>
@@ -202,7 +219,7 @@
             <p>
               Separete your list of tasks with a comma (e.g; Eat, write code,
               ...) -->
-            </p>
+            <!-- </p> -->
             <!-- MORNING TODOS -->
             <!-- <h6 class="text-primary py-3">Morning Todo List</h6>
             <div class="mb-3 mt-3">
