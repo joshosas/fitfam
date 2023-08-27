@@ -16,7 +16,7 @@
         'Wednesday',
         'Thursday',
         'Friday',
-        'Saturday'
+        'Saturda'
       ],
       datasets: [{
         data: [
